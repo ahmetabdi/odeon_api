@@ -1,6 +1,6 @@
 # OdeonApi
 
-This gem wraps the unofficial odeon api, endpoints where found by proxying requests from the android mobile app.
+This gem wraps the unofficial odeon api, endpoints were found by proxying requests from the android mobile app.
 
 ## Installation
 
