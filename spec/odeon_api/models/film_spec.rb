@@ -1,7 +1,11 @@
 require 'spec_helper'
 
-describe OdeonApi::Cinema do
-  it 'does something useful' do
+describe OdeonApi::Film do
+  it 'returns all the films' do
     puts OdeonApi::Film.all
+  end
+
+  it 'returns a film' do
+    puts OdeonApi::Film.find(15866)
   end
 end
