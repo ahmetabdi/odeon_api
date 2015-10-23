@@ -9,20 +9,6 @@ module OdeonApi
         end
       end
 
-      # def post(action, params = {}, form_data = {})
-      #   url = api.url_for(action, params)
-      #   perform_request do
-      #     parse_response(RestClient.post(url, form_data.to_json, headers))
-      #   end
-      # end
-      #
-      # def delete(action)
-      #   url = api.url_for(action)
-      #   perform_request do
-      #     parse_response(RestClient.post(url, {}, headers))
-      #   end
-      # end
-
       private
 
       def perform_request(&block)
