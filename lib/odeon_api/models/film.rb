@@ -16,7 +16,7 @@ module OdeonApi
     end
 
     def self.times(film_id, cinema_id)
-      ap build_collection(
+      build_collection(
         OdeonApi::Requester.get('film-times', s: cinema_id, m: film_id)["data"],
         FilmTimeRepresenter
       )

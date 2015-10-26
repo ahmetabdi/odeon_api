@@ -1,5 +1,4 @@
 require 'json'
-require "awesome_print"
 require 'odeon_api/resource'
 require 'odeon_api/models/film_type'
 require 'odeon_api/requester'
