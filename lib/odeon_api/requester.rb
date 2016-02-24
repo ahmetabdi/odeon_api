@@ -5,6 +5,7 @@ module OdeonApi
     class << self
       def get(action, params = {})
         url = url_for(action, params)
+        puts url
         perform_request do
           parse_response(RestClient.get(url, headers))
         end
@@ -13,7 +14,7 @@ module OdeonApi
       private
 
       def url_for(action, params = {})
-        base_url = "https://api.odeon.co.uk/android-2.1/api/"
+        base_url = "https://api.odeon.co.uk/android-2.1/"
         url = URI.join(base_url, action)
         url.query = URI.encode_www_form(params) if params
         url.to_s

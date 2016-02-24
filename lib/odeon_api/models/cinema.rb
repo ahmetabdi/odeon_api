@@ -3,17 +3,16 @@ module OdeonApi
 
     def self.all
       build_collection(
-        OdeonApi::Requester.get('all-cinemas')["data"]["sites"].map {|x| x[1]},
+        OdeonApi::Requester.get('api/all-cinemas')["data"]["sites"].map {|x| x[1]},
         CinemaRepresenter
       )
     end
 
-    def self.find(id)
+    def self.booking(booking_id, cinema_id, email, password)
+      # build_collection(
+        OdeonApi::Requester.get('booking_standard/booking-init', p: booking_id, s: cinema_id, 'customerEmail': email, 'customerPassword': password)#,
+        # FilmTimeRepresenter
+      # )
     end
-
-    def self.find_by_name(name)
-    end
-
-    # https://api.odeon.co.uk/android-2.1/api/get-rewards
   end
 end
