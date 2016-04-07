@@ -27,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'representable'
   spec.add_runtime_dependency 'multi_json'
   spec.add_runtime_dependency 'rest-client'
+  spec.add_runtime_dependency 'CFPropertyList'
 end

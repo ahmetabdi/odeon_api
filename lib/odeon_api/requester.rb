@@ -7,16 +7,18 @@ module OdeonApi
         url = url_for(action, params)
         puts url
         perform_request do
-          parse_response(RestClient.get(url, headers))
+          parse_plist(
+            RestClient.get(url, headers)
+          )
         end
       end
 
       private
 
       def url_for(action, params = {})
-        base_url = "https://api.odeon.co.uk/android-2.1/"
+        base_url = "https://api.odeon.co.uk/"
         url = URI.join(base_url, action)
-        url.query = URI.encode_www_form(params) if params
+        url.query = URI.encode_www_form(params) unless params.empty?
         url.to_s
       end
 
@@ -35,9 +37,14 @@ module OdeonApi
         end
       end
 
-      def parse_response(response_body)
+      def parse_plist(body)
+        plist = CFPropertyList::List.new(data: body)
+        CFPropertyList.native_types(plist.value).fetch('data', {})
+      end
+
+      def parse_json(body)
         begin
-          JSON.parse(response_body)
+          JSON.parse(body)
         rescue JSON::ParserError => e
           puts e.message
         end
