@@ -2,6 +2,8 @@
 
 This gem wraps the unofficial odeon api, endpoints were found by proxying requests from the android mobile app.
 
+*Probably* not working anymore, you can fnd the API calls the mobile apps make by installing mitmproxy and proxying the requests from an Android/iOS device
+
 ## Installation
 
     $ gem install odeon_api
